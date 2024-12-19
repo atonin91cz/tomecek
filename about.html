@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="cs">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Antonin Tomecek</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Alegreya+Sans+SC:ital,wght@0,100;0,300;0,400;0,500;0,700;0,800;0,900;1,100;1,300;1,400;1,500;1,700;1,800;1,900&family=Dancing+Script:wght@400..700&family=Playwrite+HR:wght@100..400&family=Quicksand:wght@300..700&display=swap" rel="stylesheet">
+
+    <style>
+        
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: "Quicksand", sans-serif;
+            line-height: 1.6;
+            color: #333;
+        }
+
+        .hore {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            display: flex;
+            justify-content: center;
+            background: linear-gradient(45deg, 
+            rgba(13, 159, 137, 0.4), 
+            rgba(20, 180, 220, 0.4), 
+            rgba(138, 43, 226, 0.4), 
+            rgba(163, 235, 29, 0.4));
+            animation: color 12s ease-in-out infinite;
+            height: 80px;
+            align-items: center;
+            z-index: 1000;
+        }
+
+        @keyframes color {
+            0% {
+                background-position: 0 50%;
+            }
+            50% {
+                background-position: 100% 50%;
+            }
+            100% {
+                background-position: 0 50%;
+            }
+        }
+
+        .hore a {
+            text-decoration: none;
+            font-weight: 700;
+            font-size: 2em; 
+            color: #0ae6bd; 
+            margin-left: 20px;
+            transition: color 0.3s ease, text-decoration 0.3s ease;
+        }
+
+        .hore a:hover {
+            color: #0ce5b2; 
+            text-decoration: underline; 
+        }
+
+        .tapeta {
+            width: 100%;
+            height: auto;
+            display: block;
+            opacity: 0.9;
+        }
+
+        .text {
+            position: absolute;
+            top: 15%;
+            left: 20%;
+            transform: translate(-50%, -50%);
+            font-size: 40px;
+            color: rgb(255, 255, 255);
+            background-color: rgba(0, 0, 0, 0.2);
+            padding: 10px 20px;
+            border-radius: 5px;
+        }
+        .tonicek{
+            
+            width: 20%;
+            position: absolute;
+            left:10%;
+            top :20%;
+
+            z-index: 101;
+        }
+        .spodek {
+            background-color: rgb(188, 195, 195);
+            position: relative;
+            height: 120px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 10px;
+        }
+
+        .obr {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 15px;
+        }
+
+        .copy {
+            position: absolute;
+            left: 1%;
+            bottom: 40%;
+            font-size: 12px;
+        }
+
+        .fb, .ig, .lin {
+            width: 30px;
+            height: 30px;
+            cursor: pointer;
+            transition: opacity 0.3s ease;
+        }
+
+        .fb:hover, .ig:hover, .lin:hover {
+            opacity: 0.6;
+        }
+    </style>
+</head>
+<body>
+    <div class="hore">
+        <a href="file:///C:/Users/oko/Desktop/portfolio/about.html">Domů</a>
+        <a href="#">O mne</a>
+        <a href="file:///C:/Users/oko/Desktop/portfolio/portfolio.html">Portfolio</a>
+        <a href="#">Kontakt</a>
+    </div>
+
+    
+
+        <div class="onlyfotka">
+            <img class="tapeta" src="photo/obrazpc.jpg" alt="">
+            <div class="text"><span class="hm">Ing. Antonín Tomeček</span>
+            
+        </div>
+        <div class="omnepozadi">
+            <img class="tonicek" src="photo/me.png">
+    </div>
+    
+    <div class="spodek">
+        <div class="obr">
+            <span class="copy"><strong>Copyright ©</strong> 2024 Antonín Tomeček Company. All rights reserved.</span>
+            <a href="https://www.facebook.com/antonin.tomecek/" target="_blank">
+                <img class="fb" src="photo/facebook.png" alt="Facebook">
+            </a>
+            <a href="https://pixabay.com/vectors/smile-emoji-happy-happiness-5865208/" target="_blank">
+                <img class="ig" src="photo/ins.png" alt="Instagram">
+            </a>
+            <a href="https://www.linkedin.com/in/antonin-tomecek/" target="_blank">
+                <img class="lin" src="photo/lin.png" alt="Linkedin">
+            </a>
+        </div>
+    </div>
+</body>
+</html>
