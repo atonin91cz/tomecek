@@ -1,179 +1,147 @@
 <!DOCTYPE html>
 <html lang="cs">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Antonin Tomecek</title>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="author" content="Antonín Tomeček" />
+    <title>Antonín Tomeček - Portfolio</title>
 
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Alegreya+Sans+SC:ital,wght@0,100;0,300;0,400;0,500;0,700;0,800;0,900;1,100;1,300;1,400;1,500;1,700;1,800;1,900&family=Dancing+Script:wght@400..700&family=Playwrite+HR:wght@100..400&family=Quicksand:wght@300..700&display=swap" rel="stylesheet">
+    <!-- Bootstrap CSS -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+
+    <!-- FontAwesome Icons -->
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
+      rel="stylesheet"
+    />
 
     <style>
-        /* Globální nastavení stylů */
-        * {
-            box-sizing: border-box;
-            margin: 0;
-            padding: 0;
-        }
+      body {
+        font-family: Arial, sans-serif;
+        display: flex;
+        flex-direction: column;
+        min-height: 100vh;
+        background-color: #000;
+        color: white;
+      }
 
-        body {
-            font-family: "Quicksand", sans-serif;
-            line-height: 1.6;
-            color: #333;
-        }
+      .navbar-custom {
+        background: linear-gradient(
+          45deg,
+          rgba(13, 159, 137, 0.7),
+          rgba(20, 180, 220, 0.7),
+          rgba(138, 43, 226, 0.7),
+          rgba(163, 235, 29, 0.7)
+        );
+        animation: color 12s ease-in-out infinite;
+      }
 
-        .hore {
-            position: fixed;
-            top: 0;
-            left: 0;
-            right: 0;
-            display: flex;
-            justify-content: center; 
-            background: linear-gradient(45deg, 
-            rgba(13, 159, 137, 0.4), 
-            rgba(20, 180, 220, 0.4), 
-            rgba(138, 43, 226, 0.4), 
-            rgba(163, 235, 29, 0.4));
-            animation: color 12s ease-in-out infinite;
-            height: 80px;
-            align-items: center;
-            z-index: 1000;
-        }
+      .navbar-custom .navbar-nav {
+        margin: 0 auto;
+      }
 
-        @keyframes color {
-            0% {
-                background-position: 0 50%;
-            }
-            50% {
-                background-position: 100% 50%;
-            }
-            100% {
-                background-position: 0 50%;
-            }
-        }
+      .navbar-custom .nav-link {
+        color: #fff;
+        font-weight: bold;
+        font-size: 1.2rem;
+        text-transform: uppercase;
+        transition: color 0.3s ease, text-decoration 0.3s ease;
+      }
 
-        .hore a {
-            text-decoration: none;
-            font-weight: 700;
-            font-size: 2em;
-            color: #16a48a; 
-            transition: color 0.3s ease, text-decoration 0.3s ease;
-            margin-left: 20px;
-        }
+      .navbar-custom .nav-link:hover {
+        color: #0ce5b2;
+        text-decoration: underline;
+      }
 
-        .hore a:hover {
-            color: #0ce5b2; 
-            text-decoration: underline; 
-        }
+      #projekty {
+        background-image: url("https://atonin91cz.github.io/tomecek91/ima2g/P2.jpg");
+        background-size: cover;
+        background-attachment: fixed;
+        padding: 100px 0;
+        text-align: center;
+      }
 
-        .tapeta {
-            width: 100%;
-            height: auto;
-            display: block;
-            opacity: 0.8;
-        }
-
-        .text {
-            position: absolute;
-            top: 25%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            font-size: 55px;
-            color: rgb(255, 255, 255);
-            background-color: rgba(0, 0, 0, 0.2);
-            padding: 10px 20px;
-            border-radius: 5px;
-        }
-
-        .projects {
-            font-style: italic;
-            position: absolute;
-            top: 42%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            font-size: 35px;
-            color: rgb(33, 77, 187);
-            display: flex;
-            align-items: center;
-            gap: 20px;
-        }
-
-        .odsazeni {
-            font-size: 100px;
-            line-height: 1;
-            display: flex;
-            align-items: center;
-        }
-
-        .spodek {
-            background-color: rgb(188, 195, 195);
-            position: relative;
-            height: 120px;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            padding: 10px;
-        }
-
-        .obr {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            gap: 15px;
-        }
-
-        .copy {
-            position: absolute;
-            left: 1%;
-            bottom: 40%;
-            font-size: 12px;
-        }
-
-        .fb, .ig, .lin {
-            width: 30px;
-            height: 30px;
-            cursor: pointer;
-            transition: opacity 0.3s ease;
-        }
-
-        .fb:hover, .ig:hover, .lin:hover {
-            opacity: 0.6;
-        }
+      .card {
+        text-align: center;
+        background-color: #000000c7;
+        color: white;
+        border: none;
+        border-radius: 10px;
+        padding: 15px;
+        box-shadow: 0 4px 8px rgba(138, 132, 132);
+      }
     </style>
-</head>
-<body>
-    <div class="hore">
-        <a href="https://atonin91cz.github.io/tomecek/">Domů</a>
-        <a href="#">O mne</a>
-        <a href="https://atonin91cz.github.io/tomecek/portfolio.html">Portfolio</a>
-        <a href="#">Kontakt</a>
-    </div>
+  </head>
+  <body>
+    <nav class="navbar navbar-expand-lg navbar-dark navbar-custom fixed-top">
+      <div class="container">
+        <a class="navbar-brand" href="index.html">
+          <img src="ima2g/LOGO.png" alt="Logo" />
+        </a>
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarNav"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav">
+            <li class="nav-item">
+              <a class="nav-link" href="index.html">Domů</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="about.html">O mně</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link active" href="portfolio.html">Portfolio</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="contact.html">Kontakt</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
 
-    <div class="omnepozadi">
-        <div class="onlyfotka">
-            <img class="tapeta" src="photo/P2.jpg" alt="">
-            <div class="text"><span class="hm">Moje projekty:</span></div>
-            <div class="projects">
-                <div class="odsazeni">&#183;</div>
-                <span>ASP.NET CORE MVC App Magistři</span>
+    <section id="projekty" class="py-5">
+      <div class="container">
+        <h2 class="text-center mb-4">Portfolio:</h2>
+        <div class="row">
+          <div class="col-md-4 mb-4">
+            <div class="card">
+              <img src="https://via.placeholder.com/300" class="card-img-top" alt="Projekt 1" />
+              <div class="card-body">
+                <h5 class="card-title">Objednávka</h5>
+                <p class="card-text">Projekt pro správu objednávek.</p>
+                <a href="https://atonin91cz.github.io/objednavka/" class="btn btn-primary">Odkaz</a>
+              </div>
             </div>
+          </div>
+          <div class="col-md-4 mb-4">
+            <div class="card">
+              <img src="https://via.placeholder.com/300" class="card-img-top" alt="Projekt 2" />
+              <div class="card-body">
+                <h5 class="card-title">Projekt 2</h5>
+                <p class="card-text">Popis druhého projektu.</p>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-4 mb-4">
+            <div class="card">
+              <img src="ima2g/me.png" class="card-img-top" alt="Projekt 3" />
+              <div class="card-body">
+                <h5 class="card-title">Projekt 3</h5>
+                <p class="card-text">Popis třetího projektu.</p>
+              </div>
+            </div>
+          </div>
         </div>
-    </div>
-    
-    <div class="spodek">
-        <div class="obr">
-            <span class="copy"><strong>Copyright ©</strong> 2024 Antonín Tomeček Company. All rights reserved.</span>
-            <a href="https://www.facebook.com/antonin.tomecek/" target="_blank">
-                <img class="fb" src="photo/facebook.png" alt="Facebook">
-            </a>
-            <a href="https://pixabay.com/vectors/smile-emoji-happy-happiness-5865208/" target="_blank">
-                <img class="ig" src="photo/ins.png" alt="Instagram">
-            </a>
-            <a href="https://www.linkedin.com/in/antonin-tomecek/" target="_blank">
-                <img class="lin" src="photo/lin.png" alt="Linkedin">
-            </a>
-        </div>
-    </div>
-</body>
+      </div>
+    </section>
+  </body>
 </html>
